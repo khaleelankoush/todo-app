@@ -1,0 +1,114 @@
+<div class="header">
+  <h1 class="board-title">Board Title</h1>
+
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn new-task-btn"
+    data-bs-toggle="modal"
+    data-bs-target="#createTask"
+  >
+    + Add new task
+  </button>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="createTask"
+    tabindex="-1"
+    aria-labelledby="createTaskLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <h1 class="modal-title fs-5" id="createTaskLabel">Add New Task</h1>
+
+        <form id="create-task-form">
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="e.g. Take coffee break"
+              name="title"
+              [(ngModel)]="title"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea
+              name="description"
+              [(ngModel)]="description"
+              class="form-control"
+              rows="5"
+              placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."
+            ></textarea>
+          </div>
+          <label class="form-label">Subtasks</label>
+          <div class="mb-3 sub-task">
+            <div
+              class="sub-task-div mb-3"
+              (keyup)="showDeleteButton(0)"
+              *ngIf="this.showDelete[0]"
+            >
+              <input
+                class="form-control sub-task-input"
+                type="text"
+                placeholder="e.g. Make coffee"
+              />
+              <span
+                class="sub-task-span"
+                *ngIf="this.showDelete[0]"
+                (click)="deleteInput(0)"
+                >&times;</span
+              >
+            </div>
+            <div
+              class="sub-task-div mb-3"
+              (keyup)="showDeleteButton(1)"
+              *ngIf="this.showDelete[1]"
+            >
+              <input
+                class="form-control sub-task-input"
+                type="text"
+                placeholder="e.g. Drink coffee & smile"
+              />
+              <span
+                class="sub-task-span"
+                *ngIf="this.showDelete[1]"
+                (click)="deleteInput(1)"
+                >&times;</span
+              >
+            </div>
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <button
+              (click)="addSubTaskInput()"
+              class="btn add-new-subtask-btn"
+              type="button"
+            >
+              + Add New Subtask
+            </button>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="create-task-status">
+              <option *ngFor="let status of statuses" value="{{ status._id }}">
+                {{ status.title }}
+              </option>
+            </select>
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              (click)="createTask()"
+              type="submit"
+              class="btn create-task-btn"
+            >
+              Create Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

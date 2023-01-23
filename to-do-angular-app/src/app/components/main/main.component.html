@@ -1,0 +1,58 @@
+<div class="main">
+  <app-column [statuses]="statuses"></app-column>
+  <div
+    class="add-new-column"
+    data-bs-toggle="modal"
+    data-bs-target="#addNewStatus"
+  >
+    + New Column
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addNewStatus"
+  tabindex="-1"
+  aria-labelledby="editTaskLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="edit-task-form">
+        <div class="mb-3">
+          <h2>Add New Status</h2>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="e.g. To do"
+            name="title"
+            [(ngModel)]="title"
+          />
+        </div>
+        <label for="statusColor" class="form-label">Color</label>
+
+        <input
+          class="form-control form-control-color"
+          id="statusColor"
+          [(colorPicker)]="color"
+          [style.background]="color"
+          [(ngModel)]="color"
+          name="color"
+        />
+        <div class="d-grid gap-2 mt-3">
+          <button
+            (click)="createStatus()"
+            type="submit"
+            class="btn create-status-btn"
+          >
+            Create Status
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

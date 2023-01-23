@@ -1,0 +1,91 @@
+@import "src/assets/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: row;
+  background-color: $secondary-color;
+  .board-title {
+    align-items: center;
+    color: $text-white;
+    margin: 0 !important;
+  }
+  .new-task-btn {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba($primary-color, 0.5);
+    }
+  }
+  .modal {
+    color: $text-white;
+    .modal-content {
+      background-color: $secondary-color;
+      padding: 2rem;
+      form {
+        .form-control {
+          background-color: $secondary-color;
+          color: $text-white;
+          border: 1px solid $text-primary;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        .add-new-subtask-btn {
+          background-color: $white-color;
+          color: $primary-color;
+          padding: 0.8rem 1.5rem;
+          border-radius: 50px;
+          border: none;
+          cursor: pointer;
+          &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+          }
+        }
+        .sub-task {
+          .sub-task-div {
+            position: relative;
+            .sub-task-input {
+              width: 95%;
+            }
+            span {
+              position: absolute;
+              right: 0;
+              top: 7px;
+              font-size: 30px;
+              cursor: pointer;
+              color: $text-primary;
+            }
+          }
+        }
+
+        .form-select {
+          background-color: $secondary-color;
+          color: $text-primary;
+          border: 1px solid $text-primary;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        .create-task-btn {
+          background-color: $primary-color;
+          color: $white-color;
+          padding: 0.8rem 1.5rem;
+          border-radius: 50px;
+          border: none;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba($primary-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+}

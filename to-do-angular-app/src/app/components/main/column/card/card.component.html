@@ -1,0 +1,39 @@
+<div
+  data-bs-toggle="modal"
+  data-bs-target="#editTask"
+  (click)="editTask(task)"
+  class="card"
+  *ngFor="let task of tasks"
+>
+  <h3 class="card-title">{{ task.title }}</h3>
+  <span class="card-progress"
+    >{{ task.complete }} of {{ task.subtasks.length }} subtasks</span
+  >
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="editTask"
+  tabindex="-1"
+  aria-labelledby="editTaskLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="edit-task-form">
+        <div class="mb-3">
+          <h2 id="task-edit-input-title"></h2>
+        </div>
+        <div class="mb-3">
+          <h4 id="task-edit-input-description"></h4>
+        </div>
+        <div class="mb-3 edit-sub-task"></div>
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <select class="form-select" id="edit-task-status"></select>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

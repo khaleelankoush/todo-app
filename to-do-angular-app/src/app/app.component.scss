@@ -1,0 +1,20 @@
+@import "src/assets/variables.scss";
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  app-sidebar {
+    background-color: $secondary-color;
+    flex: 15%;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .wrapper {
+    flex: 85%;
+    flex-direction: column;
+    width: 70%;
+  }
+}

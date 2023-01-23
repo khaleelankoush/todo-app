@@ -1,0 +1,59 @@
+@import "src/assets/variables.scss";
+
+.main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow-x: scroll;
+  app-column {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .add-new-column {
+    color: $text-white;
+    height: 80vh;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 4rem;
+    &:hover {
+      background-color: rgba($secondary-color, 0.3);
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.modal {
+  color: $text-white;
+  .modal-content {
+    background-color: $secondary-color;
+    padding: 2rem;
+    form {
+      .form-control {
+        background-color: $secondary-color;
+        color: $text-white;
+        border: 1px solid $text-primary;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      .create-status-btn {
+        background-color: $primary-color;
+        color: $white-color;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba($primary-color, 0.5);
+        }
+      }
+    }
+  }
+}

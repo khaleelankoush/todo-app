@@ -1,0 +1,9 @@
+<div class="column" *ngFor="let status of statuses">
+  <h3>
+    <span [ngStyle]="{ 'background-color': status.color }"></span
+    >{{ status.title }}
+  </h3>
+  <div class="cards" id="{{ status._id }}">
+    <app-card [statusId]="status._id"></app-card>
+  </div>
+</div>

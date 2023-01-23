@@ -1,0 +1,29 @@
+@import "src/assets/variables.scss";
+
+.column {
+  h3 {
+    top: 0;
+    color: $text-primary;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    span {
+      width: 15px;
+      height: 15px;
+      border-radius: 50px;
+    }
+  }
+  width: 300px;
+  .cards {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 80vh;
+    cursor: grab;
+    user-select: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
